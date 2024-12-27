@@ -1,0 +1,78 @@
+body {
+    font-family: Arial, sans-serif;
+    background-color: #e8f4ff;
+    margin: 0;
+    padding: 0;
+}
+.header {
+    background-color: #f0f8ff;
+    text-align: center;
+    font-size: 32px;
+    font-weight: 900;
+    color: #1d3557;
+    padding: 10px 0;
+    margin: 0;
+}
+.navbar {
+    background-color: #1d3557;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    padding: 10px 20px;
+}
+.navbar .home {
+    display: flex;
+    align-items: center;
+}
+.navbar .home a {
+    color: white;
+    font-size: 18px;
+    text-decoration: none;
+}
+.container {
+    width: 100%;
+    max-width: 1200px;
+    margin: 20px auto;
+}
+table {
+    width: 100%;
+    border-collapse: collapse;
+    background-color: #ffffff;
+    table-layout: fixed;
+}
+table, th, td {
+    border: 1px solid #ccc;
+    text-align: center;
+    padding: 8px;
+    word-wrap: break-word;
+    white-space: normal;
+}
+th {
+    background-color: #ffe5b4;
+    color: #000;
+    font-weight: bold;
+}
+td input {
+    width: 95%;
+    padding: 5px;
+    font-size: 14px;
+    box-sizing: border-box;
+}
+td button {
+    width: auto;
+    padding: 6px 12px;
+    font-size: 14px;
+    border: none;
+    background-color: #4caf50;
+    color: white;
+    cursor: pointer;
+    border-radius: 4px;
+}
+td button:hover {
+    background-color: #45a049;
+}
+td {
+    background-color: #FFFAFA;
+    text-align: center;
+    padding: 10px;
+}
