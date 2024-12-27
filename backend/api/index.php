@@ -16,7 +16,7 @@
     <div class="navbar">
         <!-- 首頁按鈕 -->
         <div class="home">
-            <img src="img/home.png" alt="首頁圖示">
+            <img src="home.png" alt="首頁圖示">
             <a></a>
             <a href="product.php">商品總覽</a>
             <a href="buyer.php">買家預覽</a> 
@@ -25,14 +25,14 @@
         <div class="search-bar">
             <input type="text" placeholder="查詢特定分類">
             <button>
-                <img src="img/search.png" alt="搜尋圖示">
+                <img src="search.png" alt="搜尋圖示">
             </button>
         </div>
     </div>
 
     <!-- 主要內容 -->
     <div class="main-content">
-        <img src="img/FOODMENUPROPOSAL.png" alt="歡迎光臨 - 超好用SPORT">
+        <img src="FOODMENUPROPOSAL.png" alt="歡迎光臨 - 超好用SPORT">
     </div>
 </body>
 </html>
