@@ -1,0 +1,86 @@
+/* editStyles.css */
+body {
+    font-family: Arial, sans-serif;
+    margin: 0;
+    padding: 0;
+    background-color: #f0f8ff;
+}
+
+.title {
+    background-color: #f0f8ff;
+    text-align: center;
+    font-size: 32px;
+    font-weight: 900;
+    color: #1d3557;
+    padding: 10px 0;
+    margin: 0;
+}
+
+.navbar {
+    background-color: #1d3557;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    padding: 10px 20px;
+}
+
+.navbar .home {
+    display: flex;
+    align-items: center;
+}
+
+.navbar .home img {
+    width: 24px;
+    height: 24px;
+    margin-right: 10px;
+}
+
+.navbar .home a {
+    color: white;
+    font-size: 18px;
+    text-decoration: none;
+}
+
+.navbar .navbar-links a {
+    color: white;
+    font-size: 18px;
+    text-decoration: none;
+    margin-left: 30px;
+}
+
+.navbar .navbar-links a:hover {
+    text-decoration: underline;
+}
+
+.navbar .search-bar {
+    display: flex;
+    align-items: center;
+}
+
+.navbar .search-bar input {
+    padding: 5px;
+    border: 1px solid #ddd;
+    border-radius: 4px;
+    margin-right: 5px;
+}
+
+.navbar .search-bar button {
+    background: none;
+    border: none;
+    cursor: pointer;
+}
+
+.navbar .search-bar button img {
+    width: 24px;
+    height: 24px;
+}
+
+.main-content {
+    text-align: center;
+    padding: 30px;
+}
+
+.main-content img {
+    max-width: 65%;
+    height: auto;
+}
