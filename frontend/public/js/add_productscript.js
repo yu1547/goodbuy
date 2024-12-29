@@ -1,12 +1,11 @@
 $category = isset($_GET['category']) ? $_GET['category'] : '';
-
-
+<script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
 $(document).ready(function () {
     $('input[name="brand_name"]').on('input', function () {
         const brandName = $(this).val();
         if (brandName.trim() !== "") {
             $.ajax({
-                url: 'api/add_save.php',
+                url: 'http://localhost/goodbuy/backend/api/add_product.php',
                 method: 'POST',
                 data: { action: 'check_brand', brand_name: brandName },
                 success: function (response) {
