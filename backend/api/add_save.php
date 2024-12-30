@@ -1,4 +1,5 @@
 <?php
+include 'db.php';
 $category = isset($_GET['category']) ? $_GET['category'] : '';
 
 header('Content-Type: application/json; charset=utf-8');
@@ -28,13 +29,7 @@ if ($_SERVER["REQUEST_METHOD"] == "POST" && isset($_POST['action']) && $_POST['a
     $conn->close();
     exit;
 }
-
-// 連接資料庫
-$servername = "localhost";
-$username = "root";
-$password = "123456789";
-$dbname = "good";
-
+include 'db.php';
 $conn = new mysqli($servername, $username, $password, $dbname);
 if ($conn->connect_error) {
     die("連接失敗: " . $conn->connect_error);

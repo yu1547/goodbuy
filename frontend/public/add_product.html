@@ -1,45 +1,31 @@
-
-
 <!DOCTYPE html>
 <html lang="zh-TW">
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>新增商品</title>
-    <link rel="stylesheet" href="css/bootstrap.min.css">
     <link rel="stylesheet" href="css/add_productStyles.css">
-    <script>
-        // 使用 JavaScript 獲取 URL 查詢參數
-        window.onload = function() {
-            const urlParams = new URLSearchParams(window.location.search);
-            const category = urlParams.get('category') || ''; // 預設值為空字串
-            document.querySelector('input[name="category"]').value = category;
-        }
-    </script>
+
 </head>
 <body>
     <div class="header">SUPER_GOOD</div>
-    <!-- <div class="container"> -->
     <div class="navbar">
-    <div class="home">
-        <a href="index.php">
-            <img src="img/home.png" alt="首頁圖示">
-        </a>
-        <a href="product.php">商品總覽</a>
+        <div class="home">
+            <a href="index.html">
+                <img src="img/home.png" alt="首頁圖示">
+            </a>
+            <button id="productOverviewButton">商品總覽</button>
+        </div>
+        <!-- 搜尋欄 -->
+        <div class="search-bar">
+            <input type="text" placeholder="查詢特定分類">
+            <button>
+                <img src="img/search.png" alt="搜尋圖示">
+            </button>
+        </div>
     </div>
-    <div class="search-bar">
-    <form method="GET" action="product.php">
-        <input type="text" name="category" placeholder="查詢特定分類">
-        <button type="submit">
-            <img src="img/search.png" alt="搜尋圖示">
-        </button>
-    </form>
-</div>
-
-</div>
-<div class="container">
-        <form id="productForm" method="post" action="http://localhost/goodbuy/backend/api/add_product.php",
-        > 
+    <div class="container">
+        <form id="productForm">
             <table>
                 <thead>
                     <tr>
@@ -61,18 +47,14 @@
                         <td><input type="number" name="price" step="0.01" required></td>
                         <td><input type="text" name="description"></td>
                         <td><input type="text" name="brand_name" required></td>
-                        <td><input type="text" name="brand_country" disabled ="disabled"></td>
-
-                        <!-- <td><input type="text" name="brand_country"></td> -->
+                        <td><input type="text" name="brand_country" disabled="disabled"></td>
                         <td><input type="number" name="quantity" required></td>
                     </tr>
                 </tbody>
             </table>
         </form>
     </div>
-</div>
-
-<script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
-<script src="js/add_productscript.js" defer></script>
+    <script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
+    <script src="js/add_productscript.js" defer></script>
 </body>
 </html>

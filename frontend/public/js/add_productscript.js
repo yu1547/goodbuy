@@ -1,18 +1,18 @@
-$category = isset($_GET['category']) ? $_GET['category'] : '';
-<script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
+import { checkBrandName, addProduct } from './api.js';
+
 $(document).ready(function () {
     $('input[name="brand_name"]').on('input', function () {
         const brandName = $(this).val();
         if (brandName.trim() !== "") {
+            // 使用 $.ajax 調用檢查品牌名稱 API
             $.ajax({
-                url: 'http://localhost/goodbuy/backend/api/add_product.php',
+                url: '/backend/api/check_brand.php',
                 method: 'POST',
-                data: { action: 'check_brand', brand_name: brandName },
+                data: { brand_name: brandName },
                 success: function (response) {
-                    const result = JSON.parse(response);
                     const brandCountryInput = $('input[name="brand_country"]');
-                    if (result.exists) {
-                        brandCountryInput.val(result.country).prop('disabled', true);
+                    if (response.exists) {
+                        brandCountryInput.val(response.country).prop('disabled', true);
                     } else {
                         brandCountryInput.val('').prop('disabled', false);
                     }
@@ -24,5 +24,25 @@ $(document).ready(function () {
         } else {
             $('input[name="brand_country"]').val('').prop('disabled', false);
         }
+    });
+
+    $('#productForm').on('submit', function (event) {
+        event.preventDefault(); // 防止表單默認提交
+
+        const formData = $(this).serialize();
+
+        // 使用 $.ajax 調用新增商品 API
+        $.ajax({
+            url: '/backend/api/add_product.php',
+            method: 'POST',
+            data: formData,
+            success: function () {
+                alert('新增成功！');
+                window.location.href = 'product.html'; // 跳轉到商品頁面
+            },
+            error: function () {
+                alert("新增失敗。請稍後重試。");
+            },
+        });
     });
 });

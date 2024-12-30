@@ -1,0 +1,81 @@
+<!DOCTYPE html>
+<html lang="zh-TW">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>商品資訊總覽</title>
+    <link rel="stylesheet" href="css/product.css">
+    <script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
+    <script src="js/product.js"></script>
+    <style>
+    .navbar .home button {
+        color: white;
+        font-size: 18px;
+        background: none;
+        border: none;
+        text-decoration: none;
+        margin-left: 30px;
+        cursor: pointer;
+        transition: transform 0.3s;
+    }
+    
+    .navbar .home button:hover {
+        transform: scale(1.1); /* 輕微放大 */
+    }
+    </style>
+</head>
+<body>
+<div class="title">SUPER_GOOD</div>
+
+<!-- 深藍色功能列 -->
+<div class="navbar">
+    <div class="home">
+        <a href="index.html">
+            <img src="img/home.png" alt="首頁圖示">
+        </a>
+        <button id="productOverviewButton">商品總覽</button>
+        <button id="buyerPreviewButton">買家預覽</button>
+    </div>
+    <div class="search-bar">
+        <input type="text" id="searchInput" placeholder="搜尋商品名稱、分類、描述">
+        <button id="searchButton">
+            <img src="img/search.png" alt="搜尋圖示">
+        </button>
+    </div>
+</div>
+
+<!-- 新增按鈕及分類商品數量 -->
+<div class="add-button-container">
+    <button class="add-button" onclick="location.href='add.html'">新增商品</button>
+    <button class="add-button" onclick="location.href='add_brand.html'">新增品牌</button>
+    <!-- <?php if ($category): ?>
+        <span class="category-count">該分類共有 <?= $category_count ?> 件商品</span>
+    <?php endif; ?> -->
+</div>
+
+<!-- 搜尋結果商品數量 -->
+<div class="category-count" style="margin-left: 5%;">
+    <!-- 這裡會由 JavaScript 動態插入內容 -->
+</div>
+
+<!-- 商品列表 -->
+<table>
+    <thead>
+        <tr>
+            <th>商品編號</th>
+            <th>商品名稱</th>
+            <th>分類</th>
+            <th>品牌</th>
+            <th>價格</th>
+            <th>描述</th>
+            <th>庫存數量</th>
+            <th>新增</th>
+            <th>刪除</th>
+        </tr>
+    </thead>
+    <tbody id="productTableBody">
+        <!-- 這裡會由 JavaScript 動態插入內容 -->
+    </tbody>
+</table>
+</body>
+</html>

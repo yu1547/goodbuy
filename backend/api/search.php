@@ -1,15 +1,5 @@
 <?php
-// 連接資料庫
-$servername = "localhost";
-$username = "root";
-$password = "123456789";
-$dbname = "good";
-
-$conn = new mysqli($servername, $username, $password, $dbname);
-
-if ($conn->connect_error) {
-    die("連接失敗: " . $conn->connect_error);
-}
+include 'db.php';
 
 // 獲取搜尋分類參數
 $category = isset($_GET['category']) ? trim($_GET['category']) : '';

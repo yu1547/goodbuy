@@ -5,6 +5,8 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>運動用品店 - 首頁</title>
     <link rel="stylesheet" href="css/style1.css">
+    <script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
+    <script src="js/index.js"></script>
 </head>
 <body>
     <!-- 主標題 -->
@@ -14,10 +16,29 @@
     <div class="navbar">
         <!-- 首頁按鈕 -->
         <div class="home">
-            <img src="img/home.png" alt="首頁圖示">
-            <a>  </a>
-            <a href="product.php">商品總覽</a>
-            <a href="buyer.php">買家預覽</a> 
+            <a href="index.html">
+                <img src="img/home.png" alt="首頁圖示">
+            </a>
+            <button id="productOverviewButton">商品總覽</button>
+            <button id="buyerPreviewButton">買家預覽</button>
+
+            <style>
+                .navbar .home button {
+                    color: white;
+                    font-size: 18px;
+                    background: none;
+                    border: none;
+                    text-decoration: none;
+                    margin-left: 30px;
+                    cursor: pointer;
+                    transition: transform 0.3s;
+                }
+
+                .navbar .home button:hover {
+                    transform: scale(1.1); /* 輕微放大 */
+                }
+            </style>
+
         </div>
         <!-- 搜尋欄 -->
         <div class="search-bar">

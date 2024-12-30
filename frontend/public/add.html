@@ -1,0 +1,57 @@
+<!DOCTYPE html>
+<html lang="zh-TW">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>新增商品</title>
+    <link rel="stylesheet" href="css/bootstrap.min.css">
+    <link rel="stylesheet" href="css/editStyles.css">
+</head>
+<body>
+    <!-- 主標題 -->
+    <div class="title">SUPER_GOOD</div>
+    <!-- 深藍色功能列 -->
+    <div class="navbar">
+        <!-- 首頁按鈕 -->
+        <div class="home">
+            <a href="index.html">
+                <img src="img/home.png" alt="首頁圖示" style="width: 24px; height: 24px;">
+            </a>
+            
+            <button id="productOverviewButton">商品總覽</button>
+            <button id="buyerPreviewButton">買家預覽</button>
+        </div>
+    </div>
+    <div class="container">
+        <form id="productForm">
+            <table>
+                <thead>
+                    <tr>
+                        <th>商品名稱</th>
+                        <th>分類</th>
+                        <th>金額</th>
+                        <th>描述</th>
+                        <th>品牌</th>
+                        <th>庫存</th>
+                    </tr>
+                </thead>
+                <tbody>
+                    <tr>
+                        <td><input type="text" name="product_name" id="product_name" required></td>
+                        <td><input type="text" name="category_name" id="category_name" required></td>
+                        <td><input type="number" name="price" id="price" step="0.01" required></td>
+                        <td><input type="text" name="description" id="description"></td>
+                        <td><input type="text" name="brand_name" id="brand_name" required></td>
+                        <td><input type="number" name="quantity" id="quantity" required></td>
+                    </tr>
+                    <tr>
+                        <td colspan="6"><button type="submit">新增</button></td>
+                    </tr>
+                </tbody>
+            </table>
+        </form>
+    </div>
+    <script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
+    <script src="js/add.js"></script>
+</body>
+</html>

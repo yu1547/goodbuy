@@ -1,9 +1,12 @@
+
+/* 基本樣式 */
 body {
     font-family: Arial, sans-serif;
-    background-color: #e8f4ff;
     margin: 0;
     padding: 0;
+    background-color: #f0f8ff;
 }
+
 .title {
     background-color: #f0f8ff;
     text-align: center;
@@ -13,6 +16,7 @@ body {
     padding: 10px 0;
     margin: 0;
 }
+
 .navbar {
     background-color: #1d3557;
     display: flex;
@@ -20,76 +24,104 @@ body {
     justify-content: space-between;
     padding: 10px 20px;
 }
+
 .navbar .home {
     display: flex;
     align-items: center;
 }
-.navbar .home button {
-    color: white;
-    font-size: 18px;
-    background: none;
-    border: none;
-    text-decoration: none;
-    margin-left: 30px;
-    cursor: pointer;
-    transition: transform 0.3s;
-}
-.navbar .home a img {
+
+.navbar .home img {
     width: 24px;
     height: 24px;
     margin-right: 10px;
 }
 
-.container {
-    width: 100%;
-    max-width: 1200px;
-    margin: 20px auto;
+.navbar .home a {
+    color: white;
+    font-size: 18px;
+    text-decoration: none;
 }
+
+.navbar .navbar-links {
+    display: flex;
+    align-items: center;
+}
+
+.navbar .navbar-links a {
+    color: white;
+    font-size: 18px;
+    text-decoration: none;
+    margin-left: 30px; /* 新增的間距 */
+}
+
+.navbar .home a + a {
+    margin-left: 30px; /* 增加距離 */
+}
+
+
+.navbar .navbar-links a:hover {
+    text-decoration: underline;
+}
+
+.navbar .search-bar {
+    display: flex;
+    align-items: middle;
+}
+
+.navbar .search-bar input {
+    padding: 5px;
+    border: 1px solid #ddd;
+    border-radius: 4px;
+    margin-right: 5px;
+}
+
+.navbar .search-bar button {
+    background: none;
+    border: none;
+    cursor: pointer;
+}
+
+.navbar .search-bar button img {
+    width: 24px;
+    height: 24px;
+}
+
+.category-count {
+    font-size: 14px;
+    color: #555;
+    margin-left: 10px;
+}
+
 table {
-    width: 100%;
+    width: 90%;
+    margin: 20px auto;
     border-collapse: collapse;
     background-color: #ffffff;
-    table-layout: fixed;
 }
+
 table, th, td {
     border: 1px solid #ccc;
-    text-align: center;
-    padding: 8px;
-    word-wrap: break-word;
-    white-space: normal;
 }
+
 th {
     background-color: #ffe5b4;
     color: #000;
     font-weight: bold;
+    padding: 10px;
 }
-td input {
-    width: 95%;
-    padding: 5px;
-    font-size: 14px;
-    box-sizing: border-box;
-}
-td button {
-    width: auto;
-    padding: 6px 12px;
-    font-size: 14px;
-    border: none;
-    background-color: #4caf50;
-    color: white;
-    cursor: pointer;
-    border-radius: 4px;
-}
-td button:hover {
-    background-color: #45a049;
-}
+
 td {
-    background-color: #FFFAFA;
     text-align: center;
     padding: 10px;
 }
-.navbar .home {
-    display: flex;
-    align-items: center;
+
+.link {
+    color: #007bff;
+    text-decoration: none;
+}
+
+.link:hover {
+    text-decoration: underline;
 }
 
 .navbar .home button {
@@ -101,13 +133,4 @@ td {
     margin-left: 30px;
     cursor: pointer;
     transition: transform 0.3s;
-}
-
-.navbar .home button:hover {
-    transform: scale(1.1); /* 輕微放大 */
-}
-
-img {
-    max-width: 100%;
-    height: auto;
 }

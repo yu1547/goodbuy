@@ -1,20 +1,9 @@
 <?php
-$category = isset($_GET['category']) ? $_GET['category'] : '';
+header("Content-Type: application/json");
 
-$servername = "localhost";
-$username = "root";
-$password = "123456789";
-$dbname = "good";
+include 'db_conn.php';
 
-// 創建連接
-$conn = new mysqli($servername, $username, $password, $dbname);
-
-// 檢查連接
-if ($conn->connect_error) {
-    die("連接失敗: " . $conn->connect_error);
-}
-
-if ($_SERVER["REQUEST_METHOD"] == "POST") {
+if ($_SERVER['REQUEST_METHOD'] === 'POST') {
     $product_name = $_POST['product_name'];
     $category_name = $_POST['category_name'];
     $price = $_POST['price'];
@@ -42,11 +31,10 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
     $stmt->bind_param("ii", $product_id, $quantity);
     $stmt->execute();
 
-    // 提示操作結果並返回主頁面
-    echo "<script>alert('新增成功！'); window.location.href = 'product.php';</script>";
+    echo json_encode(['message' => '新增成功！']);
 } else {
-    // 非 POST 請求的錯誤處理
-    echo "無效的請求！";
+    http_response_code(405);
+    echo json_encode(['error' => 'Method Not Allowed']);
 }
 
 $conn->close();
