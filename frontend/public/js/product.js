@@ -18,24 +18,27 @@ $(document).ready(function() {
             success: function(response) {
                 var products = JSON.parse(response);
                 var productTableBody = $('#productTableBody');
-
+                var categoryCount = $('.category-count'); // 獲取顯示商品數量的元素
+    
                 productTableBody.empty(); // 清空商品表格內容
                 if (products.length > 0) {
+                    categoryCount.html(`找到 "${searchTerm}" 總共 <strong>${products.length}</strong> 件商品`); // 使用html方法來更新商品數量和類別
                     $.each(products, function(index, product) {
-                        var row = '<tr id="product-row-' + product.product_id + '">' +
-                                  '<td>' + product.product_id + '</td>' +
-                                  '<td>' + product.product_name + '</td>' +
-                                  '<td>' + product.category_name + '</td>' +
-                                  '<td>' + product.brand_name + '</td>' +
-                                  '<td>' + product.price + '</td>' +
-                                  '<td>' + product.description + '</td>' +
-                                  '<td>' + product.stock_quantity + '</td>' +
-                                  '<td><button class="btn btn-edit" onclick="editProduct(' + product.product_id + ')">修改</button></td>' +
-                                  '<td><button class="btn btn-delete" onclick="deleteProduct(' + product.product_id + ')">刪除</button></td>' +
-                                  '</tr>';
+                        var row = `<tr id="product-row-${product.product_id}">
+                                      <td>${product.product_id}</td>
+                                      <td>${product.product_name}</td>
+                                      <td>${product.category_name}</td>
+                                      <td>${product.brand_name}</td>
+                                      <td>${product.price}</td>
+                                      <td>${product.description}</td>
+                                      <td>${product.stock_quantity}</td>
+                                      <td><button class="btn btn-edit" onclick="editProduct(${product.product_id})">修改</button></td>
+                                      <td><button class="btn btn-delete" onclick="deleteProduct(${product.product_id})">刪除</button></td>
+                                   </tr>`;
                         productTableBody.append(row);
                     });
                 } else {
+                    categoryCount.html(`找不到符合 "${searchTerm}" 的商品`); // 更新商品數量和類別
                     var noResultRow = '<tr><td colspan="9">找不到符合條件的商品</td></tr>';
                     productTableBody.append(noResultRow);
                 }
@@ -45,6 +48,30 @@ $(document).ready(function() {
             }
         });
     }
+    
+    $(document).ready(function() {
+        // 商品總覽按鈕跳轉
+        $('#productOverviewButton').click(function() {
+            window.location.href = 'product.html';
+        });
+    
+        // 買家預覽按鈕跳轉
+        $('#buyerPreviewButton').click(function() {
+            window.location.href = 'buyer.html';
+        });
+    
+        // 初始加載商品列表
+        loadProductList();
+    
+        // 搜尋按鈕點擊事件
+        $('#searchButton').click(function() {
+            var searchTerm = $('#searchInput').val();
+            loadProductList(searchTerm);
+        });
+    });
+    
+    
+    
 
     // 初始加載商品列表
     loadProductList();
